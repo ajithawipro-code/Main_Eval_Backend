@@ -49,11 +49,13 @@ export const updateCustVehicle = async(req,res)=>{
 
     const {tripId} = req.params;
 
+    const{vehicle_id} = req.body;
+
     const {start_date,end_date,location,distance_km,passengers} = req.body;
 
-    const {data:exist, error:existError} = await supabase.from("customers_12")
+    const {data:exist, error:existError} = await supabase.from("vehicles")
                                                          .select()
-                                                         .eq("id",tripId);
+                                                         .eq("id",vehicle_id);
 
     if(existError)
     {
@@ -65,7 +67,7 @@ export const updateCustVehicle = async(req,res)=>{
     }
 
     const{data,error} = await supabase.from("customers_12")
-                                      .update({start_date,end_date,location,distance_km,passengers})
+                                      .update({start_date,end_date,location,distance_km,passengers, vehicle_id:exist[0].id})
                                       .eq("id",tripId)
                                       .select();
     if(error)
@@ -80,10 +82,11 @@ export const updateCustVehicle = async(req,res)=>{
 export const deleteCustVehicle=async(req,res)=>{
 
     const {tripId} = req.params;
+    const {vehicle_id} = req.body;
 
-    const {data:exist, error:existError} = await supabase.from("customers_12")
+    const {data:exist, error:existError} = await supabase.from("vehicles")
                                                          .select()
-                                                         .eq("id",tripId);
+                                                         .eq("id",vehicle_id);
 
     if(existError)
     {
