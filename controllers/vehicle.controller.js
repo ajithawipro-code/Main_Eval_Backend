@@ -60,6 +60,8 @@ export const updateVehicle= async(req,res)=>{
 
 export const getVehicle=async(req,res)=>{
 
+    const{vehicleId} = req.params;
+
     const{data, error} = await supabase.from("vehicles")
                                        .select()
                                        .eq("id",vehicleId);
