@@ -16,7 +16,7 @@ if(!owner || owner.length===0)
     return res.status(404).json({message: "Owner not available for the vehicle"});
 }
 const{data, error} = await supabase.from("vehicles")
-                                   .insert([{name, registration_number,allowed_passengers,isAvailable,rate_per_km}])
+                                   .insert([{name,owner_id:owner[0].id, registration_number,allowed_passengers,isAvailable,rate_per_km}])
                                    .select();
 
 if(error)
@@ -24,7 +24,7 @@ if(error)
     return res.status(500).json({error: error.message});
 }
 
-return res.status(201).json({message:"Vehicle added successfully"});                                            
+return res.status(201).json({message:"Vehicle added successfully",data});                                            
 
 };
 
