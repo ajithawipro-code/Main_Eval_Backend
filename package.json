@@ -13,9 +13,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/ajithawipro-code/Main_Eval_Backend/issues"
   },
-  "homepage": "https://github.com/ajithawipro-code/Main_Eval_Backend#readme"
+  "homepage": "https://github.com/ajithawipro-code/Main_Eval_Backend#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.93.3",
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.2.1",
+    "nodemon": "^3.1.11"
+  }
 }
