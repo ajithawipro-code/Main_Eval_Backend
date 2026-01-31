@@ -1,0 +1,21 @@
+{
+  "name": "main_eval_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajithawipro-code/Main_Eval_Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ajithawipro-code/Main_Eval_Backend/issues"
+  },
+  "homepage": "https://github.com/ajithawipro-code/Main_Eval_Backend#readme"
+}
